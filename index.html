@@ -1,203 +1,255 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centre de Formation Numérique - Version Avancée</title>
-<style>
-  /* --- CSS Intégré --- */
-  body { font-family: Arial; margin:0; background:#f5f6fa; }
-  header { background:#2f80ed; color:white; padding:15px; display:flex; justify-content: space-between; align-items:center; position:sticky; top:0; z-index:1000; }
-  header h1 { margin:0; font-size:24px; }
-  nav a { color:white; margin-left:15px; text-decoration:none; font-weight:bold; cursor:pointer; }
-  nav a:hover { text-decoration:underline; }
-  .hero { text-align:center; padding:60px 20px; background:#eaf0ff; }
-  .hero h2 { font-size:32px; margin-bottom:10px; }
-  .hero p { font-size:18px; margin-bottom:20px; }
-  .btn { background:#27ae60; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; }
-  .btn:hover { opacity:0.9; }
-  section { padding:40px 20px; max-width:1000px; margin:auto; display:none; }
-  section.active { display:block; }
-  h2 { color:#2f80ed; text-align:center; margin-bottom:30px; }
-  .formations { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .formation { background:white; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); width:250px; }
-  .formation h3 { margin-top:0; color:#27ae60; }
-  form { max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px; }
-  input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc; font-size:16px; }
-  button { background:#2f80ed; color:white; border:none; cursor:pointer; }
-  button:hover { opacity:0.9; }
-  footer { text-align:center; padding:20px; background:#2f80ed; color:white; margin-top:40px; }
-  #dashboard { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-  #dashboard h3 { color:#2f80ed; }
-  .logout-btn { background:#e74c3c; margin-top:10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odilon Laly | Créateur digital & Développeur web</title>
+    <meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
+    <style>
+         *{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}   
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: linear-gradient(135deg, #ffb703, #fb8500);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+}
+/* =========================
+   PHOTO DE PROFIL
+========================= */
+.photo-profil {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE IMAGE */
+@media (max-width: 480px) {
+    .photo-profil {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* =========================
+   SECTIONS
+========================= */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fb8500;
+}
+
+/* =========================
+   TEXT
+========================= */
+section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1rem;
+}
+
+/* =========================
+   LISTES
+========================= */
+ul {
+    list-style: none;
+    max-width: 800px;
+    margin: auto;
+}
+
+ul li {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 5px solid #fb8500;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+#contact a {
+    color: #fb8500;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    section h3 {
+        font-size: 1.6rem;
+    }
+
+    ul li {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 40px 15px;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Centre de Formation Numérique</h1>
-  <nav>
-    <a onclick="showSection('accueil')">Accueil</a>
-    <a onclick="showSection('formations')">Formations</a>
-    <a onclick="showSection('contact')">Contact</a>
-    <a id="nav-inscription" onclick="showSection('inscription')">Inscription</a>
-    <a id="nav-login" onclick="showSection('login')">Connexion</a>
-    <a id="nav-dashboard" onclick="showSection('dashboard')" style="display:none;">Dashboard</a>
-  </nav>
+    <header>
+    <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
+
+    <h1>Odilon Laly</h1>
+    <h2>Créateur digital & Développeur web</h2>
+    <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
 </header>
 
-<!-- HERO -->
-<section id="accueil" class="active">
-  <div class="hero">
-    <h2>Apprenez le numérique facilement</h2>
-    <p>IA • Développement Web • Marketing Digital</p>
-    <a class="btn" onclick="showSection('formations')">Voir les formations</a>
-  </div>
-</section>
+    
+    <section id="apropos">
+        <h3>À propos de moi</h3>
+        <p>
+            Je suis passionné par le numérique et la création digitale.
+            Je conçois des sites web vitrines simples, modernes et efficaces,
+            et je crée également des contenus digitaux innovants tels que des chansons,
+            des visuels, des prompts IA et des scripts de voix off.
+        </p>
+        <p>
+            Mon objectif est d’aider les particuliers et les entreprises à renforcer
+            leur présence en ligne grâce à des solutions créatives, accessibles
+            et adaptées à leurs besoins.
+        </p>
+    </section>
 
-<!-- FORMATIONS -->
-<section id="formations">
-  <h2>Nos Formations</h2>
-  <div class="formations" id="formations-container"></div>
-</section>
+    
+    <section id="competences">
+        <h3>Mes savoir-faire</h3>
+        <ul>
+            <li>Création de sites web vitrines (HTML5 & CSS3)</li>
+            <li>Création de pages web pour entreprises et restaurants</li>
+            <li>Génération de chansons (paroles, idées musicales)</li>
+            <li>Création de prompts optimisés pour l’intelligence artificielle</li>
+            <li>Génération d’images avec l’IA</li>
+            <li>Rédaction de scripts et idées de voix off</li>
+            <li>Création de contenus digitaux pour réseaux sociaux</li>
+        </ul>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <form id="contactForm">
-    <input type="text" id="name" placeholder="Nom" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <textarea id="message" placeholder="Message" rows="4" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+    
+    <section id="services">
+        <h3>Mes services</h3>
+        <ul>
+            <li>🌐 Création de sites web vitrines personnels et professionnels</li>
+            <li>🍔 Création de sites pour restaurants et petites entreprises</li>
+            <li>🎵 Création de chansons personnalisées</li>
+            <li>🖼️ Création de visuels et images générées par IA</li>
+            <li>🤖 Conception de prompts efficaces pour IA</li>
+            <li>📢 Accompagnement digital et conseils en création de contenu</li>
+        </ul>
+    </section>
 
-<!-- INSCRIPTION -->
-<section id="inscription">
-  <h2>Créer un compte</h2>
-  <form id="registerForm">
-    <input type="text" id="rname" placeholder="Nom" required>
-    <input type="email" id="remail" placeholder="Email" required>
-    <input type="password" id="rpassword" placeholder="Mot de passe" required>
-    <button type="submit">S'inscrire</button>
-  </form>
-</section>
+    
+    <section id="realisations">
+        <h3>Mes réalisations</h3>
+        <ul>
+            <li>Site vitrine de restaurant : <strong>Omega Food</strong></li>
+            <li>Pages web personnelles en HTML / CSS</li>
+            <li>Projets de démonstration de sites vitrines</li>
+            <li>Contenus créatifs générés (chansons, visuels, prompts)</li>
+        </ul>
+        <p><em>D’autres projets seront ajoutés prochainement.</em></p>
+    </section>
 
-<!-- LOGIN -->
-<section id="login">
-  <h2>Connexion</h2>
-  <form id="loginForm">
-    <input type="email" id="lemail" placeholder="Email" required>
-    <input type="password" id="lpassword" placeholder="Mot de passe" required>
-    <button type="submit">Se connecter</button>
-  </form>
-</section>
 
-<!-- DASHBOARD -->
-<section id="dashboard">
-  <h2>Dashboard Étudiant</h2>
-  <div id="dashboardContent"></div>
-  <button class="logout-btn" onclick="logout()">Déconnexion</button>
-</section>
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>Vous avez un projet ou une idée ? N’hésitez pas à me contacter.</p>
+        <p>E-mail : <a href="https://chat.whatsapp.com/CghWOmq98I31V0jOkE13KM?mode=gi_t" target="_blank">odilonlaly000@gmail.com</a></p>
+        <p>📱 WhatsApp : +229 0140112492</p>
+        <p>💻 GitHub : <a href="https://github.com/odilonlaly" target="_blank">github.com/odilonlaly</a></p>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Centre de Formation Numérique</p>
-</footer>
-
-<script>
-  // --- Données formations ---
-  const formationsData = [
-    { title: "Intelligence Artificielle", description: "Bases de l'IA, Machine Learning et Deep Learning." },
-    { title: "Développement Web", description: "HTML, CSS, JavaScript, React et sites modernes." },
-    { title: "Marketing Digital", description: "SEO, réseaux sociaux, publicité et email marketing." },
-    { title: "Bureautique", description: "Word, Excel, PowerPoint et outils de productivité." }
-  ];
-
-  // --- Gestion des sections ---
-  function showSection(id){
-    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-  }
-
-  // --- Générer formations ---
-  const container = document.getElementById("formations-container");
-  formationsData.forEach(f => {
-    const div = document.createElement("div");
-    div.className = "formation";
-    div.innerHTML = `<h3>${f.title}</h3><p>${f.description}</p>`;
-    container.appendChild(div);
-  });
-
-  // --- Gestion LocalStorage utilisateurs ---
-  let users = JSON.parse(localStorage.getItem("users") || "[]");
-  let currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
-
-  function saveUsers(){ localStorage.setItem("users", JSON.stringify(users)); }
-  function saveCurrentUser(){ localStorage.setItem("currentUser", JSON.stringify(currentUser)); }
-
-  // --- Inscription ---
-  document.getElementById("registerForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const name = document.getElementById("rname").value;
-    const email = document.getElementById("remail").value;
-    const password = document.getElementById("rpassword").value;
-    if(users.find(u=>u.email===email)){ alert("Email déjà utilisé !"); return; }
-    users.push({name,email,password});
-    saveUsers();
-    alert("Compte créé avec succès !");
-    this.reset();
-    showSection("login");
-  });
-
-  // --- Connexion ---
-  document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const email = document.getElementById("lemail").value;
-    const password = document.getElementById("lpassword").value;
-    const user = users.find(u=>u.email===email && u.password===password);
-    if(!user){ alert("Email ou mot de passe incorrect"); return; }
-    currentUser = user;
-    saveCurrentUser();
-    updateDashboard();
-    alert("Connexion réussie !");
-    showSection("dashboard");
-  });
-
-  // --- Dashboard ---
-  function updateDashboard(){
-    if(!currentUser) return;
-    document.getElementById("nav-login").style.display="none";
-    document.getElementById("nav-inscription").style.display="none";
-    document.getElementById("nav-dashboard").style.display="inline";
-    const dash = document.getElementById("dashboardContent");
-    dash.innerHTML = `<h3>Bienvenue ${currentUser.name} !</h3>
-      <p>Voici vos formations :</p>
-      <ul>${formationsData.map(f=>`<li>${f.title}</li>`).join("")}</ul>`;
-  }
-
-  function logout(){
-    currentUser = null;
-    saveCurrentUser();
-    document.getElementById("nav-login").style.display="inline";
-    document.getElementById("nav-inscription").style.display="inline";
-    document.getElementById("nav-dashboard").style.display="none";
-    alert("Vous êtes déconnecté !");
-    showSection("accueil");
-  }
-
-  if(currentUser) updateDashboard();
-
-  // --- Formulaire Contact ---
-  document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Merci " + document.getElementById("name").value + ", votre message a été envoyé !");
-    this.reset();
-  });
-</script>
+    
+    <footer>
+        <p>© 2025 — Odilon Laly | Créateur digital & Développeur web</p>
+    </footer>
 
 </body>
 </html>
-    
-          
