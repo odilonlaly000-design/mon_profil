@@ -1,288 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Digital - Création Pro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odilon Laly | Créateur digital & Développeur web</title>
+    <meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
+    <link rel="stylesheet" href="pageenligne.css">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#0f172a;
-      color:white;
-    }
+    <style>
+        /* Bouton WhatsApp flottant */
+        .whatsapp-float{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            background:#25D366;
+            color:white;
+            padding:12px 15px;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:bold;
+            box-shadow:0 0 10px rgba(0,0,0,0.3);
+            z-index:999;
+        }
 
-    header{
-      text-align:center;
-      padding:60px 20px;
-      background:#111827;
-    }
-    
-    .logo{
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-
-.logo img{
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #facc15;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-    header h1{
-      font-size:40px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      color:#cbd5e1;
-    }
-
-    nav{
-      text-align:center;
-      background:#1f2937;
-      padding:10px;
-      position:sticky;
-      top:0;
-    }
-
-    nav a{
-      color:white;
-      margin:10px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    section{
-      padding:50px 20px;
-      max-width:1000px;
-      margin:auto;
-    }
-
-    h2{
-      text-align:center;
-      margin-bottom:20px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
-      gap:20px;
-    }
-
-    .card{
-      background:#1e293b;
-      padding:15px;
-      border-radius:10px;
-      text-align:center;
-    }
-
-    .card img{
-      width:100%;
-      border-radius:10px;
-    }
-
-    /* CONTACT */
-    input, textarea{
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-      border-radius:5px;
-      border:none;
-    }
-
-    button{
-      padding:12px;
-      background:#facc15;
-      border:none;
-      border-radius:5px;
-      font-weight:bold;
-      cursor:pointer;
-      width:100%;
-    }
-
-    button:hover{
-      background:#eab308;
-    }
-
-    .whatsapp{
-      display:inline-block;
-      margin-top:15px;
-      background:#25D366;
-      padding:12px 20px;
-      border-radius:5px;
-      text-decoration:none;
-      color:white;
-      font-weight:bold;
-    }
-
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#111827;
-      margin-top:30px;
-    }
-  </style>
+        .btn-commande{
+            display:inline-block;
+            margin-top:10px;
+            padding:12px 20px;
+            background:#facc15;
+            color:black;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Création Digitale Pro</h1>
-  <p>Images • Logos • Affiches • Sites Web • Chansons personnalisées</p>
-</header>
+    <!-- HEADER -->
+    <header>
+        <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
 
-<div class="logo">
-  <img src="lalylaodilon.png" alt="Logo">
-</div>
+        <h1>Odilon Laly</h1>
+        <h2>Créateur digital & Développeur web</h2>
+        <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
+    </header>
 
-<!-- NAV -->
-<nav>
-  <a href="#about">À propos</a>
-  <a href="#services">Services</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <!-- À PROPOS -->
+    <section id="apropos">
+        <h3>À propos de moi</h3>
+        <p>
+            Je suis passionné par le numérique et la création digitale.
+            Je conçois des sites web vitrines simples, modernes et efficaces.
+        </p>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>À propos</h2>
-  <p style="text-align:center;">
-    Je suis un créateur digital spécialisé dans la conception d’images professionnelles,
-    logos, affiches publicitaires, sites web et chansons personnalisées.
-  </p>
-</section>
+    <!-- COMPÉTENCES -->
+    <section id="competences">
+        <h3>Mes savoir-faire</h3>
+        <ul>
+            <li>Création de sites web vitrines</li>
+            <li>Création de logos et affiches</li>
+            <li>Chansons personnalisées</li>
+            <li>Contenus IA</li>
+        </ul>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Services</h2>
+    <!-- SERVICES -->
+    <section id="services">
+        <h3>Mes services</h3>
+        <ul>
+            <li>🌐 Sites web professionnels</li>
+            <li>🎨 Logos & affiches</li>
+            <li>🎵 Chansons personnalisées</li>
+            <li>🤖 Contenus IA</li>
+        </ul>
+    </section>
 
-  <div class="grid">
+    <!-- RÉALISATIONS -->
+    <section id="realisations">
+        <h3>Mes réalisations</h3>
+        <ul>
+            <li>Site vitrine restaurant</li>
+            <li>Pages HTML/CSS</li>
+            <li>Projets IA</li>
+        </ul>
+    </section>
 
-    <div class="card">
-      <h3>🎨 Images Pro</h3>
-      <p>Création d’images modernes et professionnelles</p>
-    </div>
+    <!-- CONTACT + COMMANDE -->
+    <section id="contact">
+        <h3>Contact / Commande</h3>
 
-    <div class="card">
-      <h3>🖼️ Affiches</h3>
-      <p>Publicité pour entreprises et événements</p>
-    </div>
+        <p>📩 E-mail : <b>odilonlaly086@gmail.com</b></p>
+        <p>📱 WhatsApp : +229 0150510966</p>
 
-    <div class="card">
-      <h3>🧩 Logos</h3>
-      <p>Logos uniques et modernes</p>
-    </div>
+        <!-- FORMULAIRE -->
+        <form id="contactForm">
 
-    <div class="card">
-      <h3>🌐 Sites Web</h3>
-      <p>Sites vitrines professionnels et rapides</p>
-    </div>
+            <input type="text" name="name" placeholder="Nom complet" required 
+            style="width:100%; padding:10px; margin:5px 0;">
 
-    <div class="card">
-      <h3>🎵 Chansons</h3>
-      <p>Chansons personnalisées (amour, anniversaire...)</p>
-    </div>
+            <input type="email" name="email" placeholder="Email" required 
+            style="width:100%; padding:10px; margin:5px 0;">
 
-  </div>
-</section>
+            <input type="text" name="country" placeholder="Pays" required 
+            style="width:100%; padding:10px; margin:5px 0;">
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <h2>Portfolio</h2>
+            <input type="text" name="whatsapp" placeholder="Numéro WhatsApp" required 
+            style="width:100%; padding:10px; margin:5px 0;">
 
-  <div class="grid">
+            <textarea name="message" placeholder="Décris ta commande (logo, site web, chanson...)" required
+            style="width:100%; padding:10px; margin:5px 0;"></textarea>
 
-    <div class="card">
-      <p>Image Pro 1</p>
-    </div>
+            <button type="submit" style="padding:12px 20px; background:black; color:white; border:none; border-radius:5px;">
+                Envoyer la commande
+            </button>
 
-    <div class="card">
-      <p>Logo Design</p>
-    </div>
+        </form>
 
-    <div class="card">
-      <p>Affiche Pub</p>
-    </div>
+        <p id="status"></p>
 
-    <div class="card">
-      <p>Site Web</p>
-    </div>
+        <!-- BOUTON WHATSAPP -->
+        <a class="btn-commande"
+           href="https://wa.me/2290150510966?text=Bonjour%20je%20veux%20passer%20une%20commande"
+           target="_blank">
+           💬 Commander sur WhatsApp
+        </a>
 
-  </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact / Commande</h2>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 — Odilon Laly | Créateur digital</p>
+    </footer>
 
-  <form id="contactForm">
+    <!-- WHATSAPP FLOTTANT -->
+    <a class="whatsapp-float"
+       href="https://wa.me/2290150510966"
+       target="_blank">
+       WhatsApp
+    </a>
 
-    <input type="text" name="name" placeholder="Nom complet" required>
+    <!-- ENVOI EMAIL -->
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+        e.preventDefault();
 
-    <input type="email" name="email" placeholder="Email" required>
+        const form = e.target;
+        const status = document.getElementById("status");
 
-    <input type="text" name="country" placeholder="Pays" required>
-
-    <input type="text" name="whatsapp" placeholder="Numéro WhatsApp" required>
-
-    <textarea name="message" placeholder="Décris ta commande (logo, site web, chanson...)" rows="5" required></textarea>
-
-    <button type="submit" id="submitBtn">Envoyer la commande</button>
-  </form>
-
-  <p id="status"></p>
-
-  <a class="whatsapp"
-     href="https://wa.me/2290150510966?text=Bonjour%20je%20veux%20passer%20une%20commande"
-     target="_blank">
-     💬 Commander sur WhatsApp
-  </a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 - Portfolio Création Digitale | Tous droits réservés
-</footer>
-
-<!-- SCRIPT FORMULAIRE -->
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const form = e.target;
-  const btn = document.getElementById("submitBtn");
-  const status = document.getElementById("status");
-
-  btn.disabled = true;
-  btn.textContent = "Envoi...";
-
-  fetch("https://formsubmit.co/ajax/odilonlaly086@gmail.com", {
-    method: "POST",
-    body: new FormData(form)
-  })
-  .then(res => res.json())
-  .then(() => {
-    status.style.color = "lightgreen";
-    status.textContent = "✅ Commande envoyée avec succès !";
-    form.reset();
-  })
-  .catch(() => {
-    status.style.color = "red";
-    status.textContent = "❌ Erreur, réessaie.";
-  })
-  .finally(() => {
-    btn.disabled = false;
-    btn.textContent = "Envoyer la commande";
-  });
-});
-</script>
+        fetch("https://formsubmit.co/ajax/odilonlaly086@gmail.com", {
+            method: "POST",
+            body: new FormData(form)
+        })
+        .then(res => res.json())
+        .then(() => {
+            status.style.color = "green";
+            status.textContent = "✅ Commande envoyée avec succès !";
+            form.reset();
+        })
+        .catch(() => {
+            status.style.color = "red";
+            status.textContent = "❌ Erreur, réessaie.";
+        });
+    });
+    </script>
 
 </body>
 </html>
