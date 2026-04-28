@@ -344,7 +344,34 @@ footer {
             status.textContent = "❌ Erreur, réessaie.";
         });
     });
-    </script>
+    
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const form = e.target;
+    const status = document.getElementById("status");
+
+    // récupérer le nom du client
+    const nomClient = form.name.value;
+
+    fetch("https://formsubmit.co/ajax/odilonlaly086@gmail.com", {
+        method: "POST",
+        body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(() => {
+        status.style.color = "green";
+        status.style.display = "block";
+        status.innerHTML = "✅ Merci <b>" + nomClient + "</b> pour votre commande,<br>votre commande a été bien reçue.<br>Veuillez patienter un instant pour le retour.<br><br>Merci 🙏";
+        form.reset();
+    })
+    .catch(() => {
+        status.style.color = "red";
+        status.style.display = "block";
+        status.textContent = "❌ Erreur, réessaie.";
+    });
+});
+</script>
 
 </body>
 </html>
