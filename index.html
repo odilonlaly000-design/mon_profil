@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odilon Laly | Créateur digital & Développeur web</title>
-    <meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
-    <link rel="stylesheet" href="pageenligne.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Odilon Laly | Créateur digital & Développeur web</title>
 
-/* =========================
-   RESET & BASE
-========================= */
-    *{margin: 0;
+<meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
+
+<style>
+
+/* RESET */
+*{
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-}   
+}
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
@@ -24,11 +24,9 @@ body {
     color: #333;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 header {
-    background: linear-gradient(135deg, #ffb703, #fb8500);
+    background: linear-gradient(135deg, #41478C, #9EA1BD);
     color: #fff;
     text-align: center;
     padding: 60px 20px;
@@ -50,9 +48,8 @@ header p {
     max-width: 700px;
     margin: auto;
 }
-/* =========================
-   PHOTO DE PROFIL
-========================= */
+
+/* PHOTO */
 .photo-profil {
     width: 160px;
     height: 160px;
@@ -63,16 +60,14 @@ header p {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* RESPONSIVE IMAGE */
 @media (max-width: 480px) {
     .photo-profil {
         width: 120px;
         height: 120px;
     }
 }
-/* =========================
-   SECTIONS
-========================= */
+
+/* SECTIONS */
 section {
     padding: 60px 20px;
     max-width: 1100px;
@@ -86,23 +81,19 @@ section h3 {
     color: #fb8500;
 }
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 section p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 20px auto;
-    font-size: 1rem;
 }
 
-/* =========================
-   LISTES
-========================= */
+/* LISTES */
 ul {
     list-style: none;
     max-width: 800px;
     margin: auto;
+    padding-left: 0;
 }
 
 ul li {
@@ -119,259 +110,133 @@ ul li:hover {
     transform: translateX(5px);
 }
 
-/* =========================
-   CONTACT
-========================= */
-#contact a {
-    color: #fb8500;
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    background: #2f80ed;
+    color: white;
+    padding: 50px 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #ff7a18;
+    color: white;
     text-decoration: none;
-    font-weight: 500;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-#contact a:hover {
-    text-decoration: underline;
+.btn:hover {
+    background: #e86810;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
-    background: #222;
-    color: #fff;
     text-align: center;
     padding: 20px;
+    background: #222;
+    color: white;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header h2 {
-        font-size: 1.1rem;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    section h3 {
-        font-size: 1.6rem;
-    }
-
-    ul li {
-        padding: 12px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 40px 15px;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-}
-        /* Bouton WhatsApp flottant */
-        .whatsapp-float{
-            position:fixed;
-            bottom:20px;
-            right:20px;
-            background:#25D366;
-            color:white;
-            padding:12px 15px;
-            border-radius:50px;
-            text-decoration:none;
-            font-weight:bold;
-            box-shadow:0 0 10px rgba(0,0,0,0.3);
-            z-index:999;
-        }
-
-        .btn-commande{
-            display:inline-block;
-            margin-top:10px;
-            padding:12px 20px;
-            background:#facc15;
-            color:black;
-            text-decoration:none;
-            border-radius:5px;
-            font-weight:bold;
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
+<header>
+    <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
+    <h1>Odilon Laly</h1>
+    <h2>Créateur digital & Développeur web</h2>
+    <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
+</header>
 
-        <h1>Odilon Laly</h1>
-        <h2>Créateur digital & Développeur web</h2>
-        <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
-    </header>
+<section id="apropos">
+    <h3>À propos de moi</h3>
+    <p>
+        Je suis passionné par le numérique et la création digitale.
+        Je conçois des sites web modernes, simples et efficaces,
+        et je crée également des contenus innovants (chansons, visuels, prompts IA, voix off).
+    </p>
+    <p>
+        Mon objectif est d’aider les particuliers et les entreprises à développer
+        leur présence en ligne avec des solutions créatives et rentables.
+    </p>
+</section>
 
-    <!-- À PROPOS -->
-    <section id="apropos">
-        <h3>À propos de moi</h3>
-        <p>
-            Je suis passionné par le numérique et la création digitale.
-            Je conçois des sites web vitrines simples, modernes et efficaces.
-        </p>
-    </section>
+<section id="competences">
+    <h3>Pourquoi me choisir ?</h3>
+    <ul>
+        <li>🔥 Sites web modernes et professionnels</li>
+        <li>⚡ Résultats rapides et efficaces</li>
+        <li>💡 Créativité + stratégie digitale</li>
+        <li>📈 Objectif : vous faire gagner de l’argent</li>
+    </ul>
+</section>
 
-    <!-- COMPÉTENCES -->
-    <section id="competences">
-        <h3>Mes savoir-faire</h3>
-        <ul>
-            <li>Création de sites web vitrines</li>
-            <li>Création de logos et affiches</li>
-            <li>Chansons personnalisées</li>
-            <li>Contenus IA</li>
-        </ul>
-    </section>
+<section id="services">
+    <h3>Mes services</h3>
+    <ul>
+        <li>🌐 Création de sites web vitrines</li>
+        <li>🍔 Sites pour restaurants et entreprises</li>
+        <li>🎵 Création de chansons personnalisées</li>
+        <li>🖼️ Visuels et images IA</li>
+        <li>🤖 Prompts optimisés IA</li>
+        <li>📢 Accompagnement digital</li>
+    </ul>
+</section>
 
-    <!-- SERVICES -->
-    <section id="services">
-        <h3>Mes services</h3>
-        <ul>
-            <li>🌐 Sites web professionnels</li>
-            <li>🎨 Logos & affiches</li>
-            <li>🎵 Chansons personnalisées</li>
-            <li>🤖 Contenus IA</li>
-        </ul>
+<section class="cta">
+    <h2>🔥 Passez à l’action maintenant</h2>
+    <p>Ne restez pas au même niveau. Transformez vos idées en revenus dès aujourd’hui.</p>
+</section>
 
-    </section>
+<section>
+    <h3>Choisissez votre besoin</h3>
+</section>
 
-    <!-- RÉALISATIONS -->
-    <section id="realisations">
-        <h3>Mes réalisations</h3>
-        <ul>
-            <li>Site vitrine restaurant</li>
-            <li>Pages HTML/CSS</li>
-            <li>Projets IA</li>
-        </ul>
-        <ul>
-            <a href="omegafood.html"><li>Site vitrine de restaurant : <strong>Omega Food</strong></li></a>
-            <a href="index.html"><li>Pages web personnelles en HTML / CSS</li></a>
-            <a href="formation.html"><li>Inscription en ligne : Formation IA 
-            </li></a>
-            <li>Projets de démonstration de sites vitrines</li>
-            <li>Contenus créatifs générés (chansons, visuels, prompts)</li>
-        </ul>
-        <p><em>D’autres projets seront ajoutés prochainement.</em></p>
+<section class="cta">
+    <h2>💼 Commander un service</h2>
+    <p>Lancez votre projet dès maintenant</p>
+    <a href="commande.html"= class="btn">Commander maintenant</a>
+</section>
 
-    </section>
+<section>
+    <h3 style="color: blue;">🎓 Formation</h3>
+    <div class="card">
+        <p>Apprenez à créer et à gagner de l’argent avec le digital.</p>
+        <a href="formation.html     " class="btn">Accéder à la formation</a>
+    </div>
+</section>
 
-    <!-- CONTACT + COMMANDE -->
-    <section id="contact">
-        <h3>Contact / Commande</h3>
+<section>
+    <h3 style="color: blue;">❓ Une question </h3>
+    <div class="card">
+        <p>Besoin d’aide ou d’informations ? Contactez-moi directement.</p>
+     <a href="https://wa.me/2290150510966?text=Bonjour%20Odilon%2C%20j'ai%20une%20préoccupation" 
+   class="btn" target="_blank">
+  📲 Me contacter sur WhatsApp
+</a>
+        
+    </div>
+</section>
 
-        <p>📩 E-mail : <b>odilonlaly086@gmail.com</b></p>
-        <p>📱 WhatsApp : +229 0150510966</p>
 
-        <!-- FORMULAIRE -->
-        <form id="contactForm">
-
-            <input type="text" name="name" placeholder="Nom complet" required 
-            style="width:100%; padding:10px; margin:5px 0;">
-
-            <input type="email" name="email" placeholder="Email" required 
-            style="width:100%; padding:10px; margin:5px 0;">
-
-            <input type="text" name="country" placeholder="Pays" required 
-            style="width:100%; padding:10px; margin:5px 0;">
-
-            <input type="text" name="whatsapp" placeholder="Numéro WhatsApp" required 
-            style="width:100%; padding:10px; margin:5px 0;">
-
-            <textarea name="message" placeholder="Décris ta commande (logo, site web, chanson...)" required
-            style="width:100%; padding:10px; margin:5px 0;"></textarea>
-
-            <button type="submit" style="padding:12px 20px; background:black; color:white; border:none; border-radius:5px;">
-                Envoyer la commande
-            </button>
-
-        </form>
-
-        <p id="status"></p>
-
-        <!-- BOUTON WHATSAPP -->
-        <a class="btn-commande"
-           href="https://wa.me/2290150510966?text=Bonjour%20je%20veux%20passer%20une%20commande"
-           target="_blank">
-           💬 Commander sur WhatsApp
-        </a>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 — Odilon Laly | Créateur digital</p>
-    </footer>
-
-    <!-- WHATSAPP FLOTTANT -->
-    <a class="whatsapp-float"
-       href="https://wa.me/2290150510966"
-       target="_blank">
-       WhatsApp
-    </a>
-
-    <!-- ENVOI EMAIL -->
-    <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-        e.preventDefault();
-
-        const form = e.target;
-        const status = document.getElementById("status");
-
-        fetch("https://formsubmit.co/ajax/odilonlaly086@gmail.com", {
-            method: "POST",
-            body: new FormData(form)
-        })
-        .then(res => res.json())
-        .then(() => {
-            status.style.color = "green";
-            status.textContent = "✅ Commande envoyée avec succès !";
-            form.reset();
-        })
-        .catch(() => {
-            status.style.color = "red";
-            status.textContent = "❌ Erreur, réessaie.";
-        });
-    });
-    
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const form = e.target;
-    const status = document.getElementById("status");
-
-    // récupérer le nom du client
-    const nomClient = form.name.value;
-
-    fetch("https://formsubmit.co/ajax/odilonlaly086@gmail.com", {
-        method: "POST",
-        body: new FormData(form)
-    })
-    .then(res => res.json())
-    .then(() => {
-        status.style.color = "green";
-        status.style.display = "block";
-        status.innerHTML = "✅ Merci <b>" + nomClient + "</b> pour votre commande,<br>votre commande a été bien reçue.<br>Veuillez patienter un instant pour le retour.<br><br>Merci 🙏";
-        form.reset();
-    })
-    .catch(() => {
-        status.style.color = "red";
-        status.style.display = "block";
-        status.textContent = "❌ Erreur, réessaie.";
-    });
-});
-</script>
+<footer>
+    <p>© 2026 Odilon Laly | Créateur digital & Développeur web — Tous droits réservés</p>
+</footer>
 
 </body>
 </html>
