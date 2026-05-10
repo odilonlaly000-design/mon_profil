@@ -1,383 +1,932 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Les Histoires en Ligne | Odilon Laly</title>
-  <meta name="description" content="11 histoires vraies qui inspirent. Amour, business, galère, succès. Leçons de vie par Odilon Laly.">
+
+  <!-- SEO -->
+  <meta name="description" content="11 histoires vraies inspirantes sur l’amour, le business, les galères et le succès. Découvrez les leçons de vie d’Odilon Laly." />
+  <meta name="keywords" content="histoires inspirantes, amour, business, motivation, mindset, succès, Odilon Laly" />
+  <meta name="author" content="Odilon Laly" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      line-height: 1.7;
-      background: #0f0a1e;
-      color: #e8e8e8;
+
+    :root{
+      --bg:#0f0a1e;
+      --card:#1a1333;
+      --primary:#7c4dff;
+      --primary-dark:#651fff;
+      --text:#f5f5f5;
+      --text-light:#b5b5b5;
+      --border:#2a1f4d;
+      --success:#25D366;
+      --danger:#ff0844;
     }
-    header {
-      background: linear-gradient(135deg, #2d1b69 0%, #1a0b3d 100%);
-      color: white;
-      text-align: center;
-      padding: 80px 20px 50px;
-      position: relative;
-      border-bottom: 3px solid #7c4dff;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
-    header h1 { font-size: 2.8rem; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-   .btn-retour {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
+
+    html{
+      scroll-behavior:smooth;
     }
-   .btn-retour:hover { background: rgba(255,255,255,0.25); }
-   .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
     }
-   .histoire-card {
-      background: #1a1333;
-      margin-bottom: 35px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      border: 1px solid #2a1f4d;
+
+    img{
+      max-width:100%;
+      display:block;
     }
-   .histoire-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(124,77,255,0.25);
-      border-color: #7c4dff;
+
+    a{
+      text-decoration:none;
     }
-   .offre-banner {
-      background: linear-gradient(90deg, #ff0844 0%, #ff6b6b 100%);
-      color: white;
-      text-align: center;
-      padding: 14px;
-      font-weight: bold;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
+
+    /* ===== HEADER ===== */
+
+    header{
+      position:relative;
+      text-align:center;
+      padding:90px 20px 60px;
+      background:
+      linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+      linear-gradient(135deg,#2d1b69 0%, #1a0b3d 100%);
+      border-bottom:3px solid var(--primary);
     }
-   .histoire-header {
-      padding: 30px 30px 15px;
-      position: relative;
+
+    .btn-retour{
+      position:absolute;
+      top:20px;
+      left:20px;
+      background:rgba(255,255,255,.12);
+      color:white;
+      padding:12px 18px;
+      border-radius:30px;
+      font-weight:600;
+      transition:.3s;
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(8px);
     }
-   .histoire-titre {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-      line-height: 1.3;
-      color: #f5f5f5;
+
+    .btn-retour:hover{
+      background:rgba(255,255,255,.22);
+      transform:translateY(-2px);
     }
-   .histoire-angle {
-      color: #b5b5b5;
-      font-size: 1.05rem;
-      margin-bottom: 15px;
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:15px;
+      font-weight:800;
     }
-   .histoire-lecon {
-      background: rgba(124, 77, 255, 0.15);
-      padding: 18px 30px;
-      border-top: 1px solid rgba(124, 77, 255, 0.3);
-      font-weight: 600;
-      color: #b39ddb;
+
+    header p{
+      max-width:700px;
+      margin:auto;
+      color:#ddd;
+      font-size:1.1rem;
     }
-   .histoire-lecon span {
-      font-weight: 800;
-      color: #d1c4e9;
+
+    /* ===== CONTAINER ===== */
+
+    .container{
+      width:min(100%, 950px);
+      margin:auto;
+      padding:50px 20px;
     }
-   .histoire-footer {
-      padding: 25px 30px 30px;
-      text-align: center;
+
+    /* ===== CARDS ===== */
+
+    .histoire-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      margin-bottom:35px;
+      transition:.35s ease;
+      box-shadow:0 10px 35px rgba(0,0,0,.35);
     }
-   .btn-lire {
-      display: inline-block;
-      background: linear-gradient(135deg, #7c4dff, #651fff);
-      color: white;
-      padding: 14px 35px;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.3s;
-      font-size: 1rem;
+
+    .histoire-card:hover{
+      transform:translateY(-8px);
+      border-color:var(--primary);
+      box-shadow:0 18px 45px rgba(124,77,255,.25);
     }
-   .btn-lire:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(124,77,255,0.5);
+
+    .offre-banner{
+      background:linear-gradient(90deg,#ff0844,#ff6b6b);
+      text-align:center;
+      padding:14px;
+      font-weight:700;
+      letter-spacing:.5px;
+      color:white;
+      font-size:.95rem;
     }
-   .btn-offre {
-      background: linear-gradient(135deg, #ff0844, #ff6b6b);
-      animation: pulse 2s infinite;
+
+    .histoire-header{
+      padding:30px;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 rgba(255,8,68,0.7); }
-      70% { box-shadow: 0 0 0 12px rgba(255,8,68,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,8,68,0); }
+
+    .histoire-titre{
+      font-size:1.7rem;
+      margin-bottom:15px;
+      line-height:1.35;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
     }
-   .badge {
-      display: inline-block;
-      padding: 5px 14px;
-      border-radius: 15px;
-      font-size: 0.85rem;
-      margin-left: 10px;
-      color: white;
-      font-weight: 600;
+
+    .histoire-angle{
+      color:var(--text-light);
+      font-size:1rem;
     }
-   .badge-amour { background: #e91e63; }
-   .badge-business { background: #00bfa5; }
-   .badge-galere { background: #ff6d00; }
-   .badge-impact { background: #7c4dff; }
-   .histoire-prive {
-      filter: blur(4px);
-      user-select: none;
-      opacity: 0.5;
-      font-style: italic;
-      margin: 20px 0;
-      color: #888;
+
+    .lock-icon{
+      font-size:2.8rem;
+      opacity:.25;
+      margin:20px 0 10px;
+      text-align:center;
     }
-    .lock-icon {
-      font-size: 3rem;
-      text-align: center;
-      margin: 20px 0 10px;
-      opacity: 0.3;
+
+    .histoire-prive{
+      margin-top:15px;
+      padding:12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px dashed rgba(255,255,255,.08);
+      color:#8f8f8f;
+      text-align:center;
+      font-style:italic;
+      filter:blur(3px);
+      user-select:none;
     }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #0a0718;
-      color: #888;
-      margin-top: 40px;
-      border-top: 1px solid #2a1f4d;
+
+    .histoire-lecon{
+      background:rgba(124,77,255,.12);
+      border-top:1px solid rgba(124,77,255,.2);
+      padding:22px 30px;
+      color:#d6c9ff;
+      font-weight:500;
     }
-   .cta-fin {
-      background: linear-gradient(135deg, #2d1b69 0%, #1a0b3d 100%);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      margin: 40px 0 0;
-      border-top: 3px solid #7c4dff;
+
+    .histoire-lecon span{
+      font-weight:700;
+      color:white;
     }
-   .cta-fin h2 { margin-bottom: 15px; font-size: 2rem; }
-   .btn-whatsapp {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 16px 40px;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-top: 15px;
-      transition: 0.3s;
-      font-size: 1.1rem;
+
+    .histoire-footer{
+      padding:30px;
+      text-align:center;
     }
-   .btn-whatsapp:hover { background: #1da851; transform: scale(1.05); }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-     .histoire-titre { font-size: 1.4rem; }
-     .histoire-header, .histoire-lecon, .histoire-footer { padding: 20px; }
+
+    /* ===== BUTTONS ===== */
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:15px 34px;
+      border-radius:12px;
+      font-weight:700;
+      transition:.3s;
+      border:none;
+      cursor:pointer;
+      font-size:1rem;
     }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:scale(1.05);
+      box-shadow:0 10px 25px rgba(124,77,255,.45);
+    }
+
+    .btn-offre{
+      background:linear-gradient(135deg,#ff0844,#ff6b6b);
+      animation:pulse 2s infinite;
+    }
+
+    .btn-whatsapp{
+      background:var(--success);
+      color:white;
+      margin-top:20px;
+    }
+
+    .btn-whatsapp:hover{
+      background:#1ca851;
+      transform:scale(1.05);
+    }
+
+    @keyframes pulse{
+      0%{
+        box-shadow:0 0 0 0 rgba(255,8,68,.6);
+      }
+
+      70%{
+        box-shadow:0 0 0 15px rgba(255,8,68,0);
+      }
+
+      100%{
+        box-shadow:0 0 0 0 rgba(255,8,68,0);
+      }
+    }
+
+    /* ===== BADGES ===== */
+
+    .badge{
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:700;
+      color:white;
+      white-space:nowrap;
+    }
+
+    .badge-amour{
+      background:#e91e63;
+    }
+
+    .badge-business{
+      background:#00bfa5;
+    }
+
+    .badge-galere{
+      background:#ff6d00;
+    }
+
+    .badge-impact{
+      background:#7c4dff;
+    }
+
+    /* ===== CTA ===== */
+
+    .cta-fin{
+      margin-top:40px;
+      padding:70px 20px;
+      text-align:center;
+      background:linear-gradient(135deg,#2d1b69 0%, #1a0b3d 100%);
+      border-top:3px solid var(--primary);
+    }
+
+    .cta-fin h2{
+      font-size:2.2rem;
+      margin-bottom:15px;
+    }
+
+    .cta-fin p{
+      max-width:700px;
+      margin:auto;
+      color:#d5d5d5;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      color:#888;
+      background:#0a0718;
+      border-top:1px solid var(--border);
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    @media(max-width:768px){
+
+      header{
+        padding-top:110px;
+      }
+
+      header h1{
+        font-size:2.2rem;
+      }
+
+      .histoire-titre{
+        font-size:1.35rem;
+      }
+
+      .histoire-header,
+      .histoire-footer,
+      .histoire-lecon{
+        padding:22px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .btn-retour{
+        left:50%;
+        transform:translateX(-50%);
+      }
+
+      .btn-retour:hover{
+        transform:translateX(-50%) translateY(-2px);
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
+
+  <!-- HEADER -->
+
   <header>
-    <a href="index.html" class="btn-retour">← Accueil</a>
+
+    <a href="index.html" class="btn-retour" aria-label="Retour à l'accueil">
+      ← Accueil
+    </a>
+
     <h1>📖 Les Histoires en Ligne</h1>
-    <p>Des récits vrais. Des leçons qui marquent. Laquelle va changer ton histoire ?</p>
+
+    <p>
+      Des récits vrais. Des leçons qui marquent.
+      Découvre des histoires capables de changer ta vision de la vie.
+    </p>
+
   </header>
 
-  <div class="container">
+  <!-- MAIN -->
 
-    <!-- 1 - OFFRE GRATUITE -->
-    <div class="histoire-card">
-      <div class="offre-banner">🔥 OFFRE GRATUITE PENDANT 24H SEULEMENT</div>
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Deux Cœurs, Une Seule Destinée 🌹 <span class="badge badge-amour">Amour</span></h2>
-        <p class="histoire-angle"><strong>Angle :</strong> Elle rate son bus. Lui lui propose de l’eau sous la pluie. 10 min de discussion changent leur vie. Pas de drague, juste le bon timing.</p>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> L’amour ne cherche pas la perfection, il cherche le bon moment.
-      </div>
-      <div class="histoire-footer">
-        <a href="histoire-destinee.html" class="btn-lire btn-offre">🎁 Profitez de l'offre</a>
-      </div>
-    </div>
+  <main class="container">
 
-    <!-- 2 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">L’Amour Caché Derrière les Mensonges 🌙 <span class="badge badge-amour">Amour</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Il lui ment sur son vrai travail pour ne pas lui faire honte. Elle découvre qu’il se tue à la tâche la nuit pour payer ses études à elle.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> Certains mensonges protègent plus qu’ils ne détruisent.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20L'Amour%20Caché" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
+    <!-- CARD -->
 
-    <!-- 3 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Les étudiants amoureux sans confiance <span class="badge badge-amour">Amour</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Fouille de téléphone, crises de jalousie. Ils s’aiment mais se détruisent. Ils font un pacte : 30 jours sans se contrôler.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> L’amour sans confiance, c’est une prison à deux.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Les%20étudiants%20amoureux" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
+    <article class="histoire-card">
 
-    <!-- 4 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Le Message Qui a Changé Ma Vie ❤️ <span class="badge badge-impact">Impact</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Message d’une inconnue : "Ton post m’a empêché de faire une bêtise cette nuit". Il réalise que ses mots ont un poids.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
+      <div class="offre-banner">
+        🔥 OFFRE GRATUITE PENDANT 24H SEULEMENT
       </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> Un seul message peut sauver une vie. Le tien aussi.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Le%20Message" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
 
-    <!-- 5 -->
-    <div class="histoire-card">
       <div class="histoire-header">
-        <h2 class="histoire-titre">Empreinte contre stylo vendu <span class="badge badge-galere">Galère</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Ruiné au point de vendre son stylo pour manger. Plus rien pour signer un contrat. Il signe avec son pouce. Ce contrat le sauve.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> Quand t’as plus rien, ton nom vaut encore tout.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Empreinte%20contre%20stylo" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
 
-    <!-- 6 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Zéro franc, cuisine dans le noir, patron <span class="badge badge-business">Business</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Coupure d’électricité tous les soirs. Il cuisine à la bougie pour vendre au quartier. Le "goût fumé" devient sa marque.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> Transforme ton handicap en signature.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Zéro%20franc%20cuisine" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
+        <h2 class="histoire-titre">
+          Deux Cœurs, Une Seule Destinée 🌹
+          <span class="badge badge-amour">Amour</span>
+        </h2>
 
-    <!-- 7 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">NON à 5 millions cash <span class="badge badge-business">Business</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Un gars riche veut racheter son petit business pour le tuer. 5 millions posés sur la table. Il refuse. 2 ans plus tard, sa boîte vaut 100 millions.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> L’argent rapide tue les rêves longs.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20NON%20à%205%20millions" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
+        <p class="histoire-angle">
+          <strong>Angle :</strong>
+          Elle rate son bus. Lui lui propose de l’eau sous la pluie.
+          10 minutes de discussion changent leur vie.
+        </p>
 
-    <!-- 8 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Facture d’hôpital, business né <span class="badge badge-business">Business</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Impossible de payer l’opération de sa mère. Il crée un service de livraison de médicaments la nuit pour l’hôpital.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
       </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> La douleur crée les meilleures entreprises.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Facture%20hôpital" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
 
-    <!-- 9 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Prof le jour. Roi du gombo la nuit <span class="badge badge-galere">Hustle</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Salaire de prof = 0 économie. Chaque nuit après les cours, il vend du gombo au marché. Ses élèves découvrent son stand.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
       <div class="histoire-lecon">
-        <span>Leçon :</span> Aucun travail n’est sale quand le but est propre.
+        <span>Leçon :</span>
+        L’amour ne cherche pas la perfection,
+        il cherche le bon moment.
       </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Prof%20Roi%20du%20gombo" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
 
-    <!-- 10 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Vieux téléphone, appel à l’avenir <span class="badge badge-business">Mindset</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> Téléphone à touches, écran cassé. Il l’utilise pour appeler 100 numéros par jour. Le 100e appel décroche un contrat à vie.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
-      </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> C’est pas l’outil. C’est le nombre d’essais.
-      </div>
       <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Vieux%20téléphone" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
-    </div>
 
-    <!-- 11 -->
-    <div class="histoire-card">
-      <div class="histoire-header">
-        <h2 class="histoire-titre">Démission pour des prompts : ils riaient <span class="badge badge-impact">IA</span></h2>
-        <div class="lock-icon">🔒</div>
-        <p class="histoire-angle"><strong>Angle :</strong> CDI, salaire fixe, collègues qui se moquent. Il plaque tout pour vendre des prompts IA. Mois 1 = galère. Mois 3 = salaire x5.</p>
-        <div class="histoire-prive">Histoire privée - Débloquez l'accès complet</div>
+        <a
+          href="https://nbwspgka.mychariow.shop/prd_79byxt"
+          class="btn btn-offre"
+          target="_blank"
+          rel="noopener"
+        >
+          🎁 Profiter de l’offre
+        </a>
+
       </div>
-      <div class="histoire-lecon">
-        <span>Leçon :</span> Le monde traite de fou celui qui voit le futur en premier.
-      </div>
-      <div class="histoire-footer">
-        <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Démission%20prompts" class="btn-lire" target="_blank">Débloquer l'histoire</a>
-      </div>
+
+    </article>
+    
+    <!-- ========================= -->
+<!-- 2 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      L’Amour Caché Derrière les Mensonges 🌙
+      <span class="badge badge-amour">Amour</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Il cache son vrai travail pour ne pas lui faire honte.
+      Chaque nuit, il travaille jusqu’à l’épuisement pour payer ses études.
+      Un jour, elle découvre toute la vérité.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
     </div>
 
   </div>
 
-  <div class="cta-fin">
-    <h2>Tu veux débloquer les 10 autres histoires ?</h2>
-    <p>Écris-moi sur WhatsApp. Je t’envoie le pack complet + 1 histoire bonus inédite.</p>
-    <a href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20toutes%20les%20histoires" class="btn-whatsapp" target="_blank">📲 Débloquer sur WhatsApp</a>
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Certains sacrifices parlent plus fort que les mots.
   </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20L'Amour%20Caché"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 3 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Les Étudiants Amoureux Sans Confiance 📱
+      <span class="badge badge-amour">Amour</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Fouilles de téléphone, jalousie et disputes deviennent leur quotidien.
+      Ils décident alors de vivre 30 jours sans contrôle pour sauver leur relation.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    L’amour sans confiance devient une prison.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Les%20étudiants%20amoureux"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 4 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Le Message Qui a Changé Ma Vie ❤️
+      <span class="badge badge-impact">Impact</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Une inconnue lui écrit :
+      “Ton message m’a empêché de faire une énorme erreur cette nuit.”
+      Il comprend alors la puissance de ses mots.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Un simple message peut transformer une vie.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Le%20Message"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 5 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Empreinte Contre Stylo Vendu ✍️
+      <span class="badge badge-galere">Galère</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Affamé, il vend son dernier stylo pour manger.
+      Quelques heures plus tard, un contrat important arrive.
+      Il signe avec son empreinte.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Même sans rien, ta valeur reste intacte.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Empreinte%20contre%20stylo"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 6 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Zéro Franc, Cuisine dans le Noir 🍲
+      <span class="badge badge-business">Business</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Sans électricité, il cuisine chaque soir à la bougie.
+      Les habitants adorent son “goût fumé”.
+      Son problème devient sa signature.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Ton handicap peut devenir ton avantage.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Zéro%20franc%20cuisine"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 7 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      NON à 5 Millions Cash 💰
+      <span class="badge badge-business">Business</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Un homme riche propose une énorme somme pour racheter son business.
+      Tout le monde lui dit d’accepter.
+      Il refuse.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Les rêves longs valent plus que l’argent rapide.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20NON%20à%205%20millions"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 8 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Facture d’Hôpital, Business Né 🏥
+      <span class="badge badge-business">Business</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Incapable de payer l’opération de sa mère,
+      il crée un service de livraison de médicaments la nuit.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Les plus grandes idées naissent souvent de la douleur.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Facture%20hôpital"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 9 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Prof le Jour, Roi du Gombo la Nuit 🌱
+      <span class="badge badge-galere">Hustle</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Après ses cours, il vend du gombo au marché pour survivre.
+      Ses élèves découvrent un soir son stand.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Aucun travail n’est honteux quand le but est noble.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Prof%20Roi%20du%20gombo"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 10 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Vieux Téléphone, Appel à l’Avenir ☎️
+      <span class="badge badge-business">Mindset</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Avec un téléphone cassé,
+      il appelle plus de 100 personnes chaque jour.
+      Le dernier appel change sa vie.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Ce n’est pas l’outil qui compte, mais la persévérance.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Vieux%20téléphone"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+<!-- ========================= -->
+<!-- 11 -->
+<!-- ========================= -->
+
+<article class="histoire-card">
+
+  <div class="histoire-header">
+
+    <h2 class="histoire-titre">
+      Démission Pour des Prompts IA 🤖
+      <span class="badge badge-impact">IA</span>
+    </h2>
+
+    <div class="lock-icon">🔒</div>
+
+    <p class="histoire-angle">
+      <strong>Angle :</strong>
+      Ses collègues se moquent de lui lorsqu’il quitte son emploi stable
+      pour vendre des prompts IA sur internet.
+      Trois mois plus tard, tout change.
+    </p>
+
+    <div class="histoire-prive">
+      Histoire privée — Débloquez l’accès complet
+    </div>
+
+  </div>
+
+  <div class="histoire-lecon">
+    <span>Leçon :</span>
+    Ceux qui voient le futur en premier sont souvent incompris.
+  </div>
+
+  <div class="histoire-footer">
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20lire%20Démission%20prompts"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      🔓 Débloquer l’histoire
+    </a>
+
+  </div>
+
+</article>
+
+    <!-- DUPLIQUE LES AUTRES CARTES ICI -->
+
+  </main>
+
+  <!-- CTA -->
+
+  <section class="cta-fin">
+
+    <h2>Tu veux débloquer toutes les histoires ?</h2>
+
+    <p>
+      Écris-moi directement sur WhatsApp pour recevoir
+      le pack complet + une histoire bonus exclusive.
+    </p>
+
+    <a
+      href="https://wa.me/2290150510966?text=Odilon%2C%20je%20veux%20toutes%20les%20histoires"
+      class="btn btn-whatsapp"
+      target="_blank"
+      rel="noopener"
+    >
+      📲 Débloquer sur WhatsApp
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <p>© 2026 Odilon Laly | Créateur digital & Développeur web — Tous droits réservés</p>
+
+    <p>
+      © 2026 Odilon Laly —
+      Créateur digital & Développeur web.
+      Tous droits réservés.
+    </p>
+
   </footer>
+
 </body>
 </html>
