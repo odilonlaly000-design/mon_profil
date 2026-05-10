@@ -1,242 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Odilon Laly | Créateur digital & Développeur web</title>
-
-<meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
-
-<style>
-
-/* RESET */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #41478C, #9EA1BD);
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header h2 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-header p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* PHOTO */
-.photo-profil {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 480px) {
-    .photo-profil {
-        width: 120px;
-        height: 120px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odilon Laly | Créateur digital & Développeur web</title>
+  <meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
+  <style>
+    /* RESET */
+    *{ margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', Arial, sans-serif; 
+      line-height: 1.6; 
+      background-color: #f9f9f9; 
+      color: #333;
+      transition: background 0.3s, color 0.3s;
     }
-}
+    /* HEADER */
+    header { background: linear-gradient(135deg, #41478C, #9EA1BD); color: #fff; text-align: center; padding: 60px 20px; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header h2 { font-size: 1.3rem; font-weight: 400; margin-bottom: 15px; }
+    header p { font-size: 1.1rem; max-width: 700px; margin: auto; }
+    /* PHOTO */
+   .photo-profil { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 5px solid #fff; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    @media (max-width: 480px) { .photo-profil { width: 120px; height: 120px; } }
+    /* SECTIONS */
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    section h3 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #fb8500; }
+    /* TEXT */
+    section p { text-align: center; max-width: 800px; margin: 0 auto 20px auto; }
+    /* LISTES */
+    ul { list-style: none; max-width: 800px; margin: auto; padding-left: 0; }
+    ul li { background: #fff; margin-bottom: 15px; padding: 15px 20px; border-left: 5px solid #fb8500; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+    ul li:hover { transform: translateX(5px); }
+    /* CARD */
+   .card { background: white; padding: 20px; border-radius: 10px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: background 0.3s; }
+    /* CTA */
+   .cta { text-align: center; background: #2f80ed; color: white; padding: 50px 20px; }
+   .btn { display: inline-block; margin-top: 15px; padding: 12px 25px; background: #ff7a18; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; }
+   .btn:hover { background: #e86810; }
+    /* FOOTER */
+    footer { text-align: center; padding: 20px; background: #222; color: white; }
 
-/* SECTIONS */
-section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
+    /* BOUTON MODE SOMBRE */
+   .theme-toggle {
+      position: sticky;
+      top: 10px;
+      text-align: right;
+      max-width: 1100px;
+      margin: -40px auto 20px auto;
+      padding: 0 20px;
+      z-index: 100;
+    }
+   .btn-theme {
+      background: #41478C;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+   .btn-theme:hover { background: #2f3266; }
 
-section h3 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #fb8500;
-}
-
-/* TEXT */
-section p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
-
-/* LISTES */
-ul {
-    list-style: none;
-    max-width: 800px;
-    margin: auto;
-    padding-left: 0;
-}
-
-ul li {
-    background: #fff;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    border-left: 5px solid #fb8500;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-ul li:hover {
-    transform: translateX(5px);
-}
-
-/* CARD */
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* CTA */
-.cta {
-    text-align: center;
-    background: #2f80ed;
-    color: white;
-    padding: 50px 20px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: #ff7a18;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #e86810;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-}
-
-</style>
+    /* MODE SOMBRE */
+    body.dark {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    body.dark ul li {
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+    body.dark .card {
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+    body.dark section h3 {
+      color: #ff9a3d;
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
+  <header>
     <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
     <h1>Odilon Laly</h1>
     <h2>Créateur digital & Développeur web</h2>
     <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
-</header>
+  </header>
 
-<section id="apropos">
+  <div class="theme-toggle">
+    <button id="btnTheme" class="btn btn-theme">🌙 Mode sombre</button>
+  </div>
+
+  <section id="apropos">
     <h3>À propos de moi</h3>
-    <p>
-        Je suis passionné par le numérique et la création digitale.
-        Je conçois des sites web modernes, simples et efficaces,
-        et je crée également des contenus innovants (chansons, visuels, prompts IA, voix off).
-    </p>
-    <p>
-        Mon objectif est d’aider les particuliers et les entreprises à développer
-        leur présence en ligne avec des solutions créatives et rentables.
-    </p>
-</section>
+    <p> Je suis passionné par le numérique et la création digitale. Je conçois des sites web modernes, simples et efficaces, et je crée également des contenus innovants (chansons, visuels, prompts IA, voix off). </p>
+    <p> Mon objectif est d’aider les particuliers et les entreprises à développer leur présence en ligne avec des solutions créatives et rentables. </p>
+  </section>
 
-<section id="competences">
+  <section id="competences">
     <h3>Pourquoi me choisir ?</h3>
     <ul>
-        <li>🔥 Sites web modernes et professionnels</li>
-        <li>⚡ Résultats rapides et efficaces</li>
-        <li>💡 Créativité + stratégie digitale</li>
-        <li>📈 Objectif : vous faire gagner de l’argent</li>
+      <li>🔥 Sites web modernes et professionnels</li>
+      <li>⚡ Résultats rapides et efficaces</li>
+      <li>💡 Créativité + stratégie digitale</li>
+      <li>📈 Objectif : vous faire gagner de l’argent</li>
     </ul>
-</section>
+  </section>
 
-<section id="services">
+  <section id="services">
     <h3>Mes services</h3>
     <ul>
-        <li>🌐 Création de sites web vitrines</li>
-        <li>🍔 Sites pour restaurants et entreprises</li>
-        <li>🎵 Création de chansons personnalisées</li>
-        <li>🖼️ Visuels et images IA</li>
-        <li>🤖 Prompts optimisés IA</li>
-        <li>📢 Accompagnement digital</li>
+      <li>🌐 Création de sites web vitrines</li>
+      <li>🍔 Sites pour restaurants et entreprises</li>
+      <li>🎵 Création de chansons personnalisées</li>
+      <li>🖼️ Visuels et images IA</li>
+      <li>🤖 Prompts optimisés IA</li>
+      <li>📢 Accompagnement digital</li>
     </ul>
-</section>
+  </section>
 
-<section class="cta">
+  <section class="cta">
     <h2>🔥 Passez à l’action maintenant</h2>
     <p>Ne restez pas au même niveau. Transformez vos idées en revenus dès aujourd’hui.</p>
-</section>
+  </section>
 
-<section>
+  <section>
     <h3>Choisissez votre besoin</h3>
-</section>
+  </section>
 
-<section class="cta">
+  <section class="cta">
     <h2>💼 Commander un service</h2>
     <p>Lancez votre projet dès maintenant</p>
-    <a href="commande.html"= class="btn">Commander maintenant</a>
-</section>
+    <a href="commande.html" class="btn">Commander maintenant</a>
+  </section>
 
-<section>
+  <section>
     <h3 style="color: blue;">🎓 Formation</h3>
     <div class="card">
-        <p>Apprenez à créer et à gagner de l’argent avec le digital.</p>
-        <a href="formation.html     " class="btn">Accéder à la formation</a>
+      <p>Apprenez à créer et à gagner de l’argent avec le digital.</p>
+      <a href="formation.html" class="btn">Accéder à la formation</a>
     </div>
-</section>
+  </section>
 
-<section>
+  <section>
+    <h3 style="color: blue;">📖 Les histoires en ligne</h3>
+    <div class="card">
+      <p>Découvre mes histoires digitales : du storytelling aux récits IA qui captivent ton audience et boostent ton business.</p>
+      <a href="Histoire.html" class="btn">Lire les histoires</a>
+    </div>
+  </section>
+
+  <section>
     <h3 style="color: blue;">❓ Une question </h3>
     <div class="card">
-        <p>Besoin d’aide ou d’informations ? Contactez-moi directement.</p>
-     <a href="https://wa.me/2290150510966?text=Bonjour%20Odilon%2C%20j'ai%20une%20préoccupation" 
-   class="btn" target="_blank">
-  📲 Me contacter sur WhatsApp
-</a>
-        
+      <p>Besoin d’aide ou d’informations ? Contactez-moi directement.</p>
+      <a href="https://wa.me/2290150510966?text=Bonjour%20Odilon%2C%20j'ai%20une%20préoccupation" class="btn" target="_blank"> 📲 Me contacter sur WhatsApp </a>
     </div>
-</section>
+  </section>
 
-
-<footer>
+  <footer>
     <p>© 2026 Odilon Laly | Créateur digital & Développeur web — Tous droits réservés</p>
-</footer>
+  </footer>
 
+  <script>
+    // 1. Récupérer les éléments
+    const btnTheme = document.getElementById('btnTheme');
+    const body = document.body;
+
+    // 2. Vérifier si mode sombre déjà sauvegardé
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark');
+      btnTheme.innerText = '☀️ Mode clair';
+    }
+
+    // 3. Click sur le bouton
+    btnTheme.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      
+      // Sauvegarder le choix
+      if (body.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'true');
+        btnTheme.innerText = '☀️ Mode clair';
+      } else {
+        localStorage.setItem('darkMode', 'false');
+        btnTheme.innerText = '🌙 Mode sombre';
+      }
+    });
+  </script>
 </body>
 </html>
