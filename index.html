@@ -1,190 +1,597 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odilon Laly | Créateur digital & Développeur web</title>
-  <meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts.">
-  <style>
-    /* RESET */
-    *{ margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Poppins', Arial, sans-serif; 
-      line-height: 1.6; 
-      background-color: #f9f9f9; 
-      color: #333;
-      transition: background 0.3s, color 0.3s;
-    }
-    /* HEADER */
-    header { background: linear-gradient(135deg, #41478C, #9EA1BD); color: #fff; text-align: center; padding: 60px 20px; }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header h2 { font-size: 1.3rem; font-weight: 400; margin-bottom: 15px; }
-    header p { font-size: 1.1rem; max-width: 700px; margin: auto; }
-    /* PHOTO */
-   .photo-profil { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 5px solid #fff; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    @media (max-width: 480px) { .photo-profil { width: 120px; height: 120px; } }
-    /* SECTIONS */
-    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-    section h3 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #fb8500; }
-    /* TEXT */
-    section p { text-align: center; max-width: 800px; margin: 0 auto 20px auto; }
-    /* LISTES */
-    ul { list-style: none; max-width: 800px; margin: auto; padding-left: 0; }
-    ul li { background: #fff; margin-bottom: 15px; padding: 15px 20px; border-left: 5px solid #fb8500; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-    ul li:hover { transform: translateX(5px); }
-    /* CARD */
-   .card { background: white; padding: 20px; border-radius: 10px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: background 0.3s; }
-    /* CTA */
-   .cta { text-align: center; background: #2f80ed; color: white; padding: 50px 20px; }
-   .btn { display: inline-block; margin-top: 15px; padding: 12px 25px; background: #ff7a18; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; }
-   .btn:hover { background: #e86810; }
-    /* FOOTER */
-    footer { text-align: center; padding: 20px; background: #222; color: white; }
 
-    /* BOUTON MODE SOMBRE */
-   .theme-toggle {
-      position: sticky;
-      top: 10px;
-      text-align: right;
-      max-width: 1100px;
-      margin: -40px auto 20px auto;
-      padding: 0 20px;
-      z-index: 100;
-    }
-   .btn-theme {
-      background: #41478C;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 14px;
-    }
-   .btn-theme:hover { background: #2f3266; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* MODE SOMBRE */
-    body.dark {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
+<title>Odilon Laly | Créateur digital & Développeur web</title>
+
+<meta name="description" content="Odilon Laly, créateur digital et développeur web. Création de sites vitrines, contenus digitaux, chansons, visuels IA et prompts IA.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================= */
+/* VARIABLES */
+/* ========================= */
+
+:root{
+
+    --bg:#f5f5f5;
+    --card:#ffffff;
+    --text:#222;
+    --text-light:#555;
+    --primary:#41478C;
+    --secondary:#fb8500;
+    --footer:#111;
+    --shadow:0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+/* DARK MODE */
+
+body.dark-mode{
+
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f1f5f9;
+    --text-light:#cbd5e1;
+    --primary:#6366f1;
+    --secondary:#f97316;
+    --footer:#020617;
+    --shadow:0 5px 20px rgba(0,0,0,0.4);
+
+}
+
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    line-height:1.7;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s ease;
+
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+    background:linear-gradient(135deg,var(--primary),#9EA1BD);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    position:relative;
+
+}
+
+.photo-profil{
+
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    margin-bottom:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+header h1{
+
+    font-size:2.8rem;
+    margin-bottom:10px;
+
+}
+
+header h2{
+
+    font-size:1.3rem;
+    font-weight:400;
+    margin-bottom:15px;
+
+}
+
+header p{
+
+    max-width:700px;
+    margin:auto;
+    font-size:1.05rem;
+
+}
+
+/* ========================= */
+/* MODE BUTTON */
+/* ========================= */
+
+.theme-btn{
+
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    border:none;
+    background:white;
+    color:#222;
+
+    padding:12px 18px;
+    border-radius:30px;
+
+    cursor:pointer;
+    font-weight:600;
+
+    transition:0.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
+section{
+
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+
+}
+
+section h3{
+
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:25px;
+    color:var(--secondary);
+
+}
+
+section p{
+
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 20px auto;
+    color:var(--text-light);
+
+}
+
+/* ========================= */
+/* LISTES */
+/* ========================= */
+
+ul{
+
+    list-style:none;
+    max-width:800px;
+    margin:auto;
+
+}
+
+ul li{
+
+    background:var(--card);
+    margin-bottom:15px;
+    padding:18px 20px;
+
+    border-left:5px solid var(--secondary);
+    border-radius:12px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.3s;
+
+}
+
+ul li:hover{
+
+    transform:translateX(6px);
+
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.card{
+
+    background:var(--card);
+    padding:25px;
+    border-radius:16px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ========================= */
+/* CTA */
+/* ========================= */
+
+.cta{
+
+    text-align:center;
+
+    background:linear-gradient(135deg,var(--primary),#2f80ed);
+
+    color:white;
+
+    padding:70px 20px;
+    border-radius:20px;
+
+    margin-top:40px;
+
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+    padding:14px 28px;
+
+    background:linear-gradient(135deg,var(--secondary),#ff7a18);
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    transition:0.3s;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.05);
+    opacity:0.95;
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+    background:var(--footer);
+    color:white;
+
+    text-align:center;
+
+    padding:25px 20px;
+
+    margin-top:40px;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    header h1{
+
+        font-size:2.2rem;
+
     }
-    body.dark ul li {
-      background: #2a2a2a;
-      color: #e0e0e0;
+
+    .photo-profil{
+
+        width:130px;
+        height:130px;
+
     }
-    body.dark .card {
-      background: #2a2a2a;
-      color: #e0e0e0;
+
+    section h3{
+
+        font-size:1.7rem;
+
     }
-    body.dark section h3 {
-      color: #ff9a3d;
-    }
-  </style>
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        🌙 Mode sombre
+    </button>
+
     <img src="lalylaodilon.png" alt="Photo de Odilon Laly" class="photo-profil">
+
     <h1>Odilon Laly</h1>
+
     <h2>Créateur digital & Développeur web</h2>
-    <p>Je transforme vos idées en contenus créatifs et en sites web professionnels.</p>
-  </header>
 
-  <div class="theme-toggle">
-    <button id="btnTheme" class="btn btn-theme">🌙 Mode sombre</button>
-  </div>
+    <p>
+        Je transforme vos idées en contenus créatifs
+        et en sites web professionnels modernes.
+    </p>
 
-  <section id="apropos">
+</header>
+
+<!-- ========================= -->
+<!-- A PROPOS -->
+<!-- ========================= -->
+
+<section id="apropos">
+
     <h3>À propos de moi</h3>
-    <p> Je suis passionné par le numérique et la création digitale. Je conçois des sites web modernes, simples et efficaces, et je crée également des contenus innovants (chansons, visuels, prompts IA, voix off). </p>
-    <p> Mon objectif est d’aider les particuliers et les entreprises à développer leur présence en ligne avec des solutions créatives et rentables. </p>
-  </section>
 
-  <section id="competences">
+    <p>
+        Passionné par le digital et les nouvelles technologies,
+        je crée des sites web modernes, des contenus créatifs,
+        des visuels IA et des solutions digitales efficaces.
+    </p>
+
+    <p>
+        Mon objectif est d’aider les particuliers
+        et les entreprises à développer leur présence en ligne.
+    </p>
+
+</section>
+
+<!-- ========================= -->
+<!-- COMPETENCES -->
+<!-- ========================= -->
+
+<section id="competences">
+
     <h3>Pourquoi me choisir ?</h3>
-    <ul>
-      <li>🔥 Sites web modernes et professionnels</li>
-      <li>⚡ Résultats rapides et efficaces</li>
-      <li>💡 Créativité + stratégie digitale</li>
-      <li>📈 Objectif : vous faire gagner de l’argent</li>
-    </ul>
-  </section>
 
-  <section id="services">
+    <ul>
+
+        <li>🔥 Sites web modernes et professionnels</li>
+
+        <li>⚡ Résultats rapides et efficaces</li>
+
+        <li>💡 Créativité + stratégie digitale</li>
+
+        <li>📈 Objectif : vous faire gagner de l’argent</li>
+
+    </ul>
+
+</section>
+
+<!-- ========================= -->
+<!-- SERVICES -->
+<!-- ========================= -->
+
+<section id="services">
+
     <h3>Mes services</h3>
+
     <ul>
-      <li>🌐 Création de sites web vitrines</li>
-      <li>🍔 Sites pour restaurants et entreprises</li>
-      <li>🎵 Création de chansons personnalisées</li>
-      <li>🖼️ Visuels et images IA</li>
-      <li>🤖 Prompts optimisés IA</li>
-      <li>📢 Accompagnement digital</li>
+
+        <li>🌐 Création de sites web vitrines</li>
+
+        <li>🍔 Sites pour restaurants et entreprises</li>
+
+        <li>🎵 Création de chansons personnalisées</li>
+
+        <li>🖼️ Visuels et images IA</li>
+
+        <li>🤖 Prompts optimisés IA</li>
+
+        <li>📢 Accompagnement digital</li>
+
     </ul>
-  </section>
 
-  <section class="cta">
+</section>
+
+<!-- ========================= -->
+<!-- HISTOIRES -->
+<!-- ========================= -->
+
+<section id="histoires">
+
+    <h3>📖 Histoires Inspirantes</h3>
+
+    <p>
+        Découvrez des histoires vraies remplies d’émotions,
+        de motivation et de leçons de vie capables
+        de changer votre façon de penser.
+    </p>
+
+    <div class="card" style="text-align:center; max-width:700px; margin:auto;">
+
+        <a href="histoire.html" class="btn">
+            📚 Lire les histoires
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CTA -->
+<!-- ========================= -->
+
+<section class="cta">
+
     <h2>🔥 Passez à l’action maintenant</h2>
-    <p>Ne restez pas au même niveau. Transformez vos idées en revenus dès aujourd’hui.</p>
-  </section>
 
-  <section>
-    <h3>Choisissez votre besoin</h3>
-  </section>
+    <p>
+        Transformez vos idées en projets rentables
+        et développez votre présence digitale.
+    </p>
 
-  <section class="cta">
-    <h2>💼 Commander un service</h2>
-    <p>Lancez votre projet dès maintenant</p>
-    <a href="commande.html" class="btn">Commander maintenant</a>
-  </section>
+</section>
 
-  <section>
-    <h3 style="color: blue;">🎓 Formation</h3>
-    <div class="card">
-      <p>Apprenez à créer et à gagner de l’argent avec le digital.</p>
-      <a href="formation.html" class="btn">Accéder à la formation</a>
+<!-- ========================= -->
+<!-- COMMANDER -->
+<!-- ========================= -->
+
+<section>
+
+    <h3>💼 Commander un service</h3>
+
+    <div class="card" style="text-align:center; max-width:700px; margin:auto;">
+
+        <p>
+            Lancez votre projet dès maintenant.
+        </p>
+
+        <a href="commande.html" class="btn">
+            Commander maintenant
+        </a>
+
     </div>
-  </section>
 
-  <section>
-    <h3 style="color: blue;">📖 Les histoires en ligne</h3>
-    <div class="card">
-      <p>Découvre mes histoires digitales : du storytelling aux récits IA qui captivent ton audience et boostent ton business.</p>
-      <a href="Odilon.html" class="btn">Lire les histoires</a>
+</section>
+
+<!-- ========================= -->
+<!-- FORMATION -->
+<!-- ========================= -->
+
+<section>
+
+    <h3>🎓 Formation</h3>
+
+    <div class="card" style="text-align:center; max-width:700px; margin:auto;">
+
+        <p>
+            Apprenez à créer et gagner de l’argent avec le digital.
+        </p>
+
+        <a href="formation.html" class="btn">
+            Accéder à la formation
+        </a>
+
     </div>
-  </section>
 
-  <section>
-    <h3 style="color: blue;">❓ Une question </h3>
-    <div class="card">
-      <p>Besoin d’aide ou d’informations ? Contactez-moi directement.</p>
-      <a href="https://wa.me/2290150510966?text=Bonjour%20Odilon%2C%20j'ai%20une%20préoccupation" class="btn" target="_blank"> 📲 Me contacter sur WhatsApp </a>
+</section>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<section>
+
+    <h3>❓ Une question ?</h3>
+
+    <div class="card" style="text-align:center; max-width:700px; margin:auto;">
+
+        <p>
+            Besoin d’aide ou d’informations ?
+            Contactez-moi directement sur WhatsApp.
+        </p>
+
+        <a
+        href="https://wa.me/2290150510966?text=Bonjour%20Odilon%2C%20j'ai%20une%20préoccupation"
+        class="btn"
+        target="_blank">
+
+        📲 Me contacter
+
+        </a>
+
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Odilon Laly | Créateur digital & Développeur web — Tous droits réservés</p>
-  </footer>
+</section>
 
-  <script>
-    // 1. Récupérer les éléments
-    const btnTheme = document.getElementById('btnTheme');
-    const body = document.body;
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
 
-    // 2. Vérifier si mode sombre déjà sauvegardé
-    if (localStorage.getItem('darkMode') === 'true') {
-      body.classList.add('dark');
-      btnTheme.innerText = '☀️ Mode clair';
+<footer>
+
+    <p>
+        © 2026 Odilon Laly —
+        Créateur digital & Développeur web.
+        Tous droits réservés.
+    </p>
+
+</footer>
+
+<!-- ========================= -->
+<!-- SCRIPT MODE -->
+<!-- ========================= -->
+
+<script>
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".theme-btn");
+
+    if(document.body.classList.contains("dark-mode")){
+
+        button.innerHTML = "☀️ Mode clair";
+
+        localStorage.setItem("theme","dark");
+
+    }else{
+
+        button.innerHTML = "🌙 Mode sombre";
+
+        localStorage.setItem("theme","light");
+
     }
 
-    // 3. Click sur le bouton
-    btnTheme.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      
-      // Sauvegarder le choix
-      if (body.classList.contains('dark')) {
-        localStorage.setItem('darkMode', 'true');
-        btnTheme.innerText = '☀️ Mode clair';
-      } else {
-        localStorage.setItem('darkMode', 'false');
-        btnTheme.innerText = '🌙 Mode sombre';
-      }
-    });
-  </script>
+}
+
+/* Sauvegarde du mode */
+
+if(localStorage.getItem("theme") === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+    document.querySelector(".theme-btn").innerHTML = "☀️ Mode clair";
+
+}
+
+</script>
+
 </body>
 </html>
